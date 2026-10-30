@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Tornadoes: Formation & EF Scale</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+                        url('https://unsplash.com') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, rgba(20, 30, 48, 0.9), rgba(36, 59, 85, 0.4));
+            border-bottom: 3px solid #00d2ff;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #00d2ff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: rgba(20, 24, 33, 0.85);
+            border-left: 5px solid #00d2ff;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #00d2ff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ol li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+        }
+
+        ol li strong {
+            color: #ffffff;
+        }
+
+        .ef-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(10, 15, 20, 0.6);
+        }
+
+        .ef-table th, .ef-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ef-table th {
+            background-color: #141e30;
+            color: #00d2ff;
+            font-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .ef-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .scale-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            min-width: 55px;
+        }
+
+        .ef0 { background-color: #a1ffb2; }
+        .ef1 { background-color: #e3ffb1; }
+        .ef2 { background-color: #ffeeb1; }
+        .ef3 { background-color: #ffd0b1; }
+        .ef4 { background-color: #ffb1b1; }
+        .ef5 { background-color: #ffb1f7; }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background: rgba(10, 15, 20, 0.9);
+            color: #888888;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .ef-table, .ef-table tbody, .ef-table tr, .ef-table td, .ef-table th {
+                display: block;
+                width: 100%;
+            }
+            .ef-table tr { margin-bottom: 15px; background: rgba(0,0,0,0.2); }
+            .ef-table th { display: none; }
+            .ef-table td { text-align: right; position: relative; padding-left: 50%; }
+            .ef-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                width: 45%;
+                text-align: left;
+                font-weight: bold;
+                color: #00d2ff;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Nature of Tornadoes</h1>
+        <p>Atmospheric Dynamics, Formation, and the Enhanced Fujita Scale</p>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>How Tornadoes Form</h2>
+            <p>Tornadoes are violently rotating columns of air extending from the base of a thunderstorm to the ground. Their formation relies on a precise sequence of atmospheric conditions:</p>
+            <ol>
+                <li><strong>Moisture and Instability:</strong> Warm, humid air near the surface trapped beneath cold, dry air aloft creates unstable atmospheric conditions, forcing the warm air to rapidly rise.</li>
+                <li><strong>Wind Shear:</strong> Variations in wind speed and direction at different altitudes create an invisible, horizontal spinning effect in the lower atmosphere.</li>
+                <li><strong>Updraft Development:</strong> Rising air within a severe thunderstorm (supercell) tilts this spinning column of air from a horizontal position to a vertical position.</li>
+                <li><strong>The Mesocyclone:</strong> This rotating updraft, now miles wide, forms a stable, spinning core within the storm structure.</li>
+                <li><strong>Wall Cloud and Funnel:</strong> As the updraft intensifies, it draws in cool, moist air from the storm's downdraft, forming a low-hanging wall cloud. A condensed funnel cloud then descends toward the ground, officially becoming a tornado the moment it touches the surface or creates visible debris.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>The Enhanced Fujita (EF) Scale</h2>
+            <p>Tornadoes are classified using the Enhanced Fujita Scale, which estimates wind speeds based on the structural and environmental damage left behind.</p>
+            
+            <table class="ef-table">
+                <thead>
+                    <tr>
+                        <th>Rating</th>
+                        <th>Estimated 3-Sec Gusts</th>
+                        <th>Typical Damage Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Rating"><span class="scale-badge ef0">EF-0</span></td>
+                        <td data-label="Wind Speeds">65–85 mph</td>
+                        <td data-label="Damage">Light. Peels surface off some roofs; some damage to chimneys; branches broken off trees; shallow-rooted trees pushed over.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Rating"><span class="scale-badge ef1">EF-1</span></td>
+                        <td data-label="Wind Speeds">86–110 mph</td>
+                        <td data-label="Damage">Moderate. Roof surfaces stripped; mobile homes overturned or badly damaged; loss of exterior doors; windows broken.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Rating"><span class="scale-badge ef2">EF-2</span></td>
+                        <td data-label="Wind Speeds">111–135 mph</td>
+                        <td data-label="Damage">Considerable. Roofs torn off well-constructed houses; foundations of frame homes moved; mobile homes completely destroyed; large trees snapped.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Rating"><span class="scale-badge ef3">EF-3</span></td>
+                        <td data-label="Wind Speeds">136–165 mph</td>
+                        <td data-label="Damage">Severe. Severe damage to large buildings; roofs and some walls torn off sturdy houses; trains overturned; most trees in forested areas uprooted.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Rating"><span class="scale-badge ef4">EF-4</span></td>
+                        <td data-label="Wind Speeds">166–200 mph</td>
+                        <td data-label="Damage">Devastating. Whole frame houses completely leveled; cars thrown considerable distances; large missiles and debris generated.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Rating"><span class="scale-badge ef5">EF-5</span></td>
+                        <td data-label="Wind Speeds">&gt; 200 mph</td>
+                        <td data-label="Damage">Incredible. Strong frame houses leveled off foundations and swept away; automobile-sized missiles fly through the air over 100 meters; high-rise buildings suffer severe structural deformation.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Severe Weather Educational Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
